@@ -210,3 +210,168 @@ The following packages are used in this project:
 
 - `npm start`: Start the development server with nodemon
 - `npm test`: Run tests (currently not implemented)
+
+## Frontend Setup
+
+The frontend is a React application built with Vite.
+
+### Prerequisites
+
+- **Node.js** (version 14 or higher)
+- **npm** (comes with Node.js)
+
+### Installation
+
+1. **Navigate to the frontend directory:**
+
+   ```
+   cd recruitment-platform
+   ```
+
+2. **Install dependencies:**
+   ```
+   npm install
+   ```
+
+### Running the Frontend
+
+1. **Start the development server:**
+
+   ```
+   npm run dev
+   ```
+
+   The application will be available at `http://localhost:5173`
+
+2. **Build for production:**
+
+   ```
+   npm run build
+   ```
+
+3. **Preview production build:**
+   ```
+   npm run preview
+   ```
+
+## Frontend Project Structure
+
+```
+recruitment-platform/
+├── src/
+│   ├── Components/
+│   │   ├── Login.jsx
+│   │   ├── Signup.jsx
+│   │   ├── Homepage.jsx
+│   │   ├── PageNotFoundPage.jsx
+│   │   └── Auth.css
+│   ├── App.jsx
+│   └── main.jsx
+├── public/
+├── package.json
+└── vite.config.js
+```
+
+## Frontend Features
+
+### Authentication Flow
+
+- **Signup Page**: User registration with form validation
+- **Login Page**: User authentication with JWT tokens
+- **Protected Routes**: Automatic redirects based on authentication status
+- **Homepage**: Displays user profile data fetched from backend
+
+### Components
+
+#### Signup Component (`/signup`)
+
+- Form fields: Name, Email, Password, Confirm Password
+- Client-side validation
+- API integration with backend
+- Automatic redirect to login after successful signup
+
+#### Login Component (`/login`)
+
+- Form fields: Email, Password
+- Client-side validation
+- JWT token storage in localStorage
+- Automatic redirect to homepage after successful login
+
+#### Homepage Component (`/`)
+
+- Fetches user data from backend API
+- Displays user profile information
+- Logout functionality
+- Protected route (requires authentication)
+
+#### App Component
+
+- Route management with React Router
+- Authentication state management
+- Automatic redirects based on auth status
+- Loading states
+
+### API Integration
+
+The frontend communicates with the backend API:
+
+#### Authentication Endpoints
+
+- `POST /api/auth/signup` - User registration
+- `POST /api/auth/login` - User login
+
+#### User Profile Endpoints
+
+- `GET /api/user/profile` - Fetch user profile data
+- `PUT /api/user/profile` - Update user profile
+
+### State Management
+
+- **Authentication State**: Managed in App.jsx with localStorage persistence
+- **User Data**: Fetched from backend and stored in component state
+- **Form State**: Local state management in auth components
+- **Error Handling**: Client-side error states and user feedback
+
+### Styling
+
+- **CSS Modules**: Shared styles in `Auth.css`
+- **Responsive Design**: Mobile-friendly layouts
+- **Consistent UI**: Unified design system across components
+
+## Frontend Dependencies
+
+- **react**: UI library
+- **react-dom**: React DOM bindings
+- **react-router-dom**: Client-side routing
+- **vite**: Build tool and dev server
+
+## Frontend Development
+
+### Available Scripts
+
+- `npm run dev`: Start development server
+- `npm run build`: Build for production
+- `npm run preview`: Preview production build
+- `npm run lint`: Run ESLint
+
+### Environment Variables
+
+The frontend connects to the backend at `http://localhost:5000` by default. To change this, update the API URLs in the components.
+
+## Full Stack Development
+
+### Running Both Backend and Frontend
+
+1. **Start the backend server:**
+
+   ```
+   cd backend-app
+   npm start
+   ```
+
+2. **Start the frontend server (in a new terminal):**
+
+   ```
+   cd recruitment-platform
+   npm run dev
+   ```
