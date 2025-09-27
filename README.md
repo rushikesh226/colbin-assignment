@@ -204,11 +204,9 @@ The following packages are used in this project:
    - Run `npm install` in the `backend-app` directory
    - Check that you're in the correct directory
 
-
 ## Development
 
 ### Scripts
 
 - `npm start`: Start the development server with nodemon
 - `npm test`: Run tests (currently not implemented)
-
