@@ -93,7 +93,7 @@ const Signup = () => {
         setErrors({ submit: data.msg || "An error occurred" });
       }
     } catch (error) {
-      setErrors({ submit: "Network error. Please try again." });
+      console.log(error);
     } finally {
       setIsLoading(false);
     }
